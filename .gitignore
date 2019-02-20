@@ -1,0 +1,4 @@
+.vagrant
+inventory/*
+jenkins_home
+!**/.gitkeep
