@@ -7,40 +7,7 @@
   guest_update: false
   update_box: false
   ip_addr: "192.168.100.150"
-  ram: "512"
-  vcpu: "1"
-
-- type: "vb"
-  enabled: true
-  sync_disabled: false
-  box: "debian/contrib-stretch64"
-  name: "jenkins-slave"
-  guest_update: false
-  update_box: false
-  ip_addr: "192.168.100.160"
-  ram: "512"
-  vcpu: "1"
-
-- type: "vb"
-  enabled: false
-  sync_disabled: true
-  box: "debian/contrib-stretch64"
-  name: "jenkins-slave-1"
-  guest_update: false
-  update_box: false
-  ip_addr: "192.168.100.161"
-  ram: "512"
-  vcpu: "1"
-
-- type: "vb"
-  enabled: false
-  sync_disabled: true
-  box: "debian/contrib-stretch64"
-  name: "jenkins-slave-swarm"
-  guest_update: false
-  update_box: false
-  ip_addr: "192.168.100.162"
-  ram: "512"
+  ram: "1024"
   vcpu: "1"
 
 - type: "aws"

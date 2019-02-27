@@ -1,4 +1,13 @@
 ---
+system_packages:
+  - git
+  - apt-transport-https
+  - ca-certificates
+  - software-properties-common
+  - gnupg2
+  - curl
+  - openjdk-8-jdk-headless
+
 vagrant:
   users:
     - vagrant

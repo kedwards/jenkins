@@ -14,6 +14,6 @@
 - name: Open docker port on Jenkins host
   lineinfile:
     path: /etc/default/docker
-    line: "DOCKER_OPTS='-H tcp://0.0.0.0:2376 -H unix:///var/run/docker.sock"
+    line: "DOCKER_OPTS='-H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock"
   notify:
     - restart docker service
