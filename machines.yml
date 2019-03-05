@@ -11,7 +11,7 @@
   vcpu: "1"
 
 - type: "aws"
-  enabled: false
+  enabled: true
   sync_disabled: true
   box: "aws-dummy"
   keypair_name: "kedwards_keca"
@@ -22,7 +22,7 @@
   ami: "ami-01872e06509e14f77" # ca-central
   private_key_path: "~/.ssh/kedwards_keca.pem"
   tags:
-    name: "awshostvmaws"
+    name: "jenkins-slave-host"
     team: "devops"
   security_group: "sg-036a315514f2508f9"
-  name: "dockerhostvmaws"
+  name: "jenkins-slave-host"

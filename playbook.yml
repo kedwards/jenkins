@@ -1,6 +1,6 @@
 ---
 - name: Configure jenkins Servers
-  hosts: jenkins-*
+  hosts: jenkins-master-*
   become: yes
   vars:
     upasswd: vagrant

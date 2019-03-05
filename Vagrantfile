@@ -30,6 +30,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
                   ansible.inventory_dir='./'
                   ansible.inventory_filename='inventory'
                 end
+
+                srv.vm.provision "ansible" do |ansible|
+                  ansible.limit = "all"
+                  ansible.playbook = "playbook.yml"
+                end
                 
                 case machine['type']
                 when 'vb'
