@@ -18,7 +18,7 @@
   instance_type: "t2.micro"
   region: "ca-central-1"
   subnet_id: "subnet-050e2d2e8c3ce2d92"
-  associate_public_ip: true
+  ip_addr: "35.182.66.188"
   ami: "ami-01872e06509e14f77" # ca-central
   private_key_path: "~/.ssh/kedwards_keca.pem"
   tags:

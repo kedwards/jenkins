@@ -24,7 +24,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         if machine['enabled'] == true
             config.vm.define machine['name'] do |srv|
                 srv.vm.hostname = machine['name']
-                srv.vm.synced_folder '.', '/vagrant', disabled: machine['sync']
 
                 srv.vm.provision :vai do |ansible|
                   ansible.inventory_dir='./'
@@ -38,6 +37,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
                 
                 case machine['type']
                 when 'vb'
+                    srv.vm.synced_folder '.', '/vagrant', disabled: machine['sync']
                     srv.vbguest.auto_update = machine['guest_update']
                     srv.vm.box_check_update = machine['update_box']
                     srv.vm.network :private_network, ip: machine['ip_addr']
@@ -67,7 +67,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
                         aws.instance_type = machine['instance_type']
                         aws.subnet_id = machine['subnet_id']
                         aws.security_groups = machine['security_group']
-                        aws.associate_public_ip = machine['associate_public_ip']
+                        aws.associate_public_ip = true
+                        aws.elastic_ip = machine['ip_addr']
                         aws.tenancy = "default"
                         aws.tags = {
                           'Name' => machine['tags']['name'],
